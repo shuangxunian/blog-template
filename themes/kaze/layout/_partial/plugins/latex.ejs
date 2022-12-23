@@ -1,0 +1,25 @@
+<%
+  let flag = theme.latex.enable;
+  if(flag) {
+    if(is_page() || is_post()) {
+      flag = theme.latex.global || page.latex;
+    } else {
+      flag = false;
+    }
+  }
+%>
+<% if(flag) { %>
+  <% const engine = theme.latex.engine; %>
+  <% if(engine === 'mathjax') { %>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <%- js(theme.cdn.mathjax) %>
+  <% } else if(engine === 'katex') { %>
+    <%- css(theme.cdn.katex) %>
+  <% } %>
+<% } %>

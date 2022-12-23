@@ -1,0 +1,41 @@
+.image-wrapper
+  overflow: hidden
+  display: block
+  width: 100%
+  height: 0
+  position: relative
+  background-color: var(--widget-background-color)
+  border-radius: 0.5rem 0.5rem 0 0
+  .image
+    -o-object-fit: cover
+    object-fit: cover
+    width: 100%
+    -webkit-filter: var(--image-filter-style)
+    filter: var(--image-filter-style)
+    position: absolute
+    transition: -webkit-filter 0.4s ease 0s
+    transition: filter 0.4s ease 0s
+    transition: filter 0.4s ease 0s, -webkit-filter 0.4s ease 0s
+    &:not(.loaded)
+      -webkit-filter: blur(5px) var(--image-filter-style)
+      filter: blur(5px) var(--image-filter-style)
+.post-image
+  margin: auto
+  -webkit-filter: var(--image-filter-style)
+  filter: var(--image-filter-style)
+  transition: -webkit-filter 0.4s ease 0s
+  transition: filter 0.4s ease 0s
+  transition: filter 0.4s ease 0s, -webkit-filter 0.4s ease 0s
+  &:not(.loaded)
+    -webkit-filter: blur(5px)
+    filter: blur(5px)
+@media screen and (min-width: 768px)
+  .image-wrapper
+    padding-bottom: 300px
+    .image
+      height: 300px
+@media screen and (max-width: 767px)
+  .image-wrapper
+    height: 16.48rem
+    .image
+      height: 16.48rem

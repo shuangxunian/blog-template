@@ -1,0 +1,137 @@
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+:root
+  font-size: 15px
+h1, h2, h3, h4, h5, h6
+  font-size: 100%
+  font-weight: 500
+  line-height: 1.25
+  color: var(--title-color)
+h2
+  font-size: 1.375rem
+  margin-bottom: 0.5rem
+  margin-top: 1.15rem
+h3
+  font-size: 1.2rem
+  margin-bottom: (2 / 3)rem
+  margin-top: (4 / 3)rem
+h4
+  font-size: 1.125rem
+  margin-bottom: 0.8rem
+h5
+  font-size: 1rem
+  margin-bottom: 0.888rem
+h6
+  font-size: 0.875rem
+  color: var(--text-strong-color)
+ul
+  list-style: none
+button, input, select, textarea
+  margin: 0
+*, *::before, *::after
+  box-sizing: inherit
+img
+  border-style: none
+  background-color: transparent
+img, video
+  height: auto
+  max-width: 100%
+iframe
+  border: 0
+table
+  border-collapse: collapse
+  border-spacing: 0
+td, th
+  padding: 0
+td:not([align]), th:not([align])
+  text-align: left
+a
+  cursor: pointer
+  color: var(--link-color)
+  text-decoration: none
+.post-content a:not([data-nolink])
+  font-weight: 500
+  cursor: pointer
+  color: var(--text-strong-color)
+  text-decoration: none
+  border-bottom: 1px solid var(--post-link-color)
+  transition: border-bottom 0.1s
+  &:hover
+    border-bottom: 2px solid var(--post-link-color)
+div
+  display: block
+*
+  box-sizing: border-box
+html, body
+  height: 100vh
+  font-size: $base-font-size
+  font-family: $font-family
+  color: var(--text-color)
+  background-color: var(--body-background-color)
+  box-sizing: border-box
+  overflow-wrap: break-word
+ol ol, ul ol, ul ul
+  margin-top: 0
+  margin-bottom: 0
+ol ol, ul ol
+  list-style-type: lower-roman
+ol ol ol, ol ul ol, ul ol ol, ul ul ol
+  list-style-type: lower-alpha
+ol li, ul li
+  margin-top: 0.5rem
+  margin-bottom: 0.5rem
+li>p
+  margin-top: 1rem
+li+li
+  margin-top: 0.25rem
+code, kbd
+  font-size: $sm-font-size
+  color: var(--code-color)
+  background-color: var(--code-background-color)
+  padding: 0.25rem 0.4rem
+  overflow-wrap: break-word
+  word-wrap: break-word
+  border-radius: 0.25rem
+  vertical-align: 0.1rem
+code[class*=language-]
+  margin: 0
+  padding: 0
+  border-radius: 0
+  vertical-align: 0
+pre[class*=language-]
+  border-radius: 0.3rem !important
+table
+  display: block
+  overflow: auto
+  border-spacing: 0
+  border-collapse: collapse
+tr
+  background-color: var(--widget-background-color)
+td, th
+  border: 0.08rem solid var(--border-color)
+  padding: 0.5rem 0.75rem
+th
+  font-weight: 700
+  color: var(--title-color)
+tbody
+  tr:nth-child(odd)
+    background-color: var(--tbody-background-color)
+pre
+  overflow: auto
+  overflow-wrap: normal
+  padding: 1rem
+  border-radius: 0.3rem !important
+::-webkit-scrollbar
+  background-color: transparent
+  width: 2px
+  height: 3px
+  background-clip: padding-box
+::-webkit-scrollbar-thumb
+  background-color: $divider-color
+  border-radius: 0.3rem
+@media (max-width: 742px)
+  #dark
+    display: none
+  #search
+    display: none

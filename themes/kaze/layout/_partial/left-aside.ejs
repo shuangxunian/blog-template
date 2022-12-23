@@ -1,0 +1,24 @@
+<div class="sticky-tablet">
+  <%# display when two columns %>
+  <% if(is_post()){ %>
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <%- partial('_partial/toc-card') %>
+      </div>
+    </article>
+  <% } %>
+  <%# categories card %>
+  <article class="card card-content categories-widget">
+    <%- partial('_partial/categories') %>
+  </article>
+  <%# tags card %>
+  <article class="card card-content tags-widget">
+    <%- partial('_partial/tags') %>
+  </article>
+  <%# display when is not in post %>
+  <% if(!is_post()) { %>
+    <article class="card card-content widescreen-archive archive-widget">
+      <%- partial('_partial/archives') %>
+    </article>
+  <% } %>
+</div>

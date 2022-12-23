@@ -1,0 +1,38 @@
+.card
+  border-radius: $border-radius
+  background-color: var(--widget-background-color)
+  max-width: 100%
+  box-shadow: var(--around-shadow-style)
+  transition: background-color 0.3s
+.image-wrapper+.card // if post has banner, the post-card border-top-radius will be 0
+  border-radius: 0 0 $border-radius $border-radius
+.card +.card, .card +.archive-timeline
+  margin-top: 1.5rem
+// content style
+.card-content, .card-author
+  background-color: var(--widget-background-color)
+  transition: background-color 0.3s
+  padding: 1.5rem
+.post-title, .card-excerpt
+  margin-bottom: 0.8rem
+.post-title
+  font-size: 1.4rem
+  font-weight: 400
+  padding-bottom: 0.4rem
+  color: var(--title-color)
+  line-height: 1.125
+.card-post-footer
+  display: flex
+  justify-content: space-between
+  padding: 0
+  a:hover
+    color: var(--link-hover-color)
+.post-meta, .post-meta-link
+  color: var(--text-light-color)
+  padding: 0 2px
+.dot
+  &::after
+    content: '·'
+@media (max-width: 862px)
+  .card +.card
+    margin-top: 0.8rem

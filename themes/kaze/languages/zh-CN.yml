@@ -1,0 +1,55 @@
+home:
+  title: 首页
+
+archive:
+  title: 归档
+
+about:
+  title: 关于
+
+friends:
+  title: 友链
+
+artitalk:
+  title: 说说
+
+posts:
+  title: 文章
+
+categories:
+  title: 分类
+  total: 共计 篇文章
+
+tags:
+  title: 标签
+  total: 共计 个标签
+
+hottags:
+  title: 热门标签
+
+readmore:
+  title: 继续阅读
+
+recentposts:
+  title: 最近文章
+
+toc:
+  title: 目录
+
+prev_page:
+  title: 上一页
+
+next_page:
+  title: 下一页
+
+prev_post:
+  title: 上一篇
+
+next_post:
+  title: 下一篇
+
+words_count:
+  title: 字
+
+min2read:
+  title: 分钟

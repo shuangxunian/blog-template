@@ -1,0 +1,62 @@
+.basebutton
+  display: flex
+  cursor: pointer
+  position: fixed
+  width: 44px
+  height: 44px
+  border-radius: 50%
+  box-shadow: var(--around-shadow-style)
+  justify-content: center
+  align-items: center
+  background-color: var(--widget-background-color)
+  transition: all 0.3s
+#scrollbutton
+  transform: rotate(90deg)
+  display: flex
+  opacity: 0
+  bottom: 32px
+  right: 32px
+  .button-icon
+    font-size: $md-font-size
+    font-weight: bold
+#menubutton
+  display: flex
+  opacity: 0
+  bottom: 32px
+  right: 32px
+  .button-icon
+    font-size: $ml-font-size
+    font-weight: bold
+#popbutton
+  z-index: 10
+  bottom: 32px
+  right: 32px
+  .button-icon
+    font-size: $sm-font-size
+    font-weight: bold
+#darkbutton
+  display: flex
+  opacity: 0
+  bottom: 32px
+  right: 32px
+  .button-icon
+    font-size: $md-font-size
+#searchbutton
+  display: flex
+  opacity: 0
+  bottom: 32px
+  right: 32px
+  .button-icon
+    font-size: $md-font-size
+.postbutton
+  cursor: pointer
+  background-color: var(--link-color)
+  border-radius: 4px
+  font-size: $md-font-size
+  padding: 4px 10px
+  border: none
+  color: #fff
+  &:hover
+    background-color: var(--link-hover-color)
+  &:focus
+    outline: none

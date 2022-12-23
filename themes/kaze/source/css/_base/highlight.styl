@@ -1,0 +1,53 @@
+code, pre
+  font-family: 'Fira Code', 'Consolas', monospace !important
+code[class*='hljs'], pre[class*='highlight'], code[class*='language']
+  color: #ccc
+  background: none
+  // This !important is required to override the default style of highlight
+  font-size: 1rem !important
+  padding: 0
+  margin-left: 0
+  text-align: left
+  white-space: pre
+  word-spacing: normal
+  word-break: normal
+  word-wrap: normal
+  line-height: 1.5
+  -moz-tab-size: 4
+  -o-tab-size: 4
+  tab-size: 4
+  -webkit-hyphens: none
+  -ms-hyphens: none
+  hyphens: none
+  overflow-x: auto
+/* Code blocks */
+pre[class*='highlight']
+  padding: 1em
+  margin: 0.5em 0
+  border-radius: 0.3rem
+  overflow: auto
+  white-space: pre
+  overflow-wrap: normal
+  &::-webkit-scrollbar
+    display: none
+:not(pre) > code[class*='hljs'], pre[class*='highlight']
+  background: var(--pre-color)
+/* Inline code */
+:not(pre) > code[class*='hljs']
+  padding: 0.1em
+  border-radius: 0.3em
+  white-space: normal
+.hljs-comment, .hljs-block-comment, .hljs-prolog, .hljs-doctype, .hljs-cdata
+  color: var(--highlight-comment-color)
+.hljs-tag
+  color: var(--highlight-tag-color)
+.hljs-title, .hljs-attr
+  color: var(--highlight-attr-color)
+.hljs-boolean, .hljs-number, .hljs-literal
+  color: var(--highlight-literal-color)
+.hljs-selector, .hljs-important, .hljs-atrule, .hljs-keyword
+  color: var(--highlight-keyword-color)
+.hljs-string, .hljs-char, .hljs-attr-value, .hljs-regex, .hljs-variable
+  color: var(--highlight-string-color)
+.hljs-operator, .hljs-entity, .hljs-url, .hljs-built_in
+  color: var(--highlight-builtin-color)

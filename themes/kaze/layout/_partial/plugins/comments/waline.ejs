@@ -1,0 +1,31 @@
+<% if(theme.comment.waline.serverURL) { %>
+  <div id="wcomments"></div>
+  <script>
+      loadScript("<%= theme.cdn.waline.js %>");
+      var oldLoadVa = window.onload;
+      window.onload = function () {
+        oldLoadVa && oldLoadVa();
+        Waline.init({
+          el: '#wcomments',
+          serverURL: '<%= theme.comment.waline.serverURL %>',
+          path: <%= theme.comment.waline.path %>,
+          lang: '<%= theme.comment.waline.lang %>',
+          placeholder: '<%= theme.comment.waline.placeholder %>',
+          meta: <%- JSON.stringify(theme.comment.waline.meta || []) %>,
+          requiredMeta: <%- JSON.stringify(theme.comment.waline.requiredMeta || []) %>,
+          dark: '<%= theme.comment.waline.dark  %>',
+          login: '<%= theme.comment.waline.login  %>',
+
+          wordLimit: <%- JSON.stringify(theme.comment.waline.wordLimit) %>,
+          pageSize: <%= theme.comment.waline.pageSize %>,
+          <% if (theme.comment.waline.emoji) { %>
+            emoji : <%- JSON.stringify(theme.comment.waline.emoji) %>,
+          <% } %>
+          <% if (theme.comment.waline.locale) { %>
+          
+            locale : <%- JSON.stringify(theme.comment.waline.locale) %>,
+          <% } %>
+        });
+      };
+    </script>
+<% } %>
