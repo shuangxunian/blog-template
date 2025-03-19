@@ -1,24 +1,52 @@
-name: Build and Deploy
-on: [push]
+name: Hexo Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # 监听 main 分支的推送
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      # 步骤 1: 检出代码
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Install and Build
+      # 步骤 2: 设置 Node.js 环境（Hexo 基于 Node.js）
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # 推荐使用 Node.js 18+（Hexo 6+ 要求）
+
+      # 步骤 3: 缓存 node_modules 加速构建
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            node_modules
+            public
+            .cache
+          key: ${{ runner.os }}-hexo-${{ hashFiles('package-lock.json') }}
+
+      # 步骤 4: 安装 Hexo 及其依赖
+      - name: Install Dependencies
         run: |
-          npm install
-          npm run build
-        env:
-          CI: false
+          npm install -g hexo-cli  # 全局安装 Hexo CLI
+          npm install  # 安装项目依赖（根据你的 package.json）
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      # 步骤 5: 生成静态文件
+      - name: Build Hexo
+        run: |
+          hexo clean  # 清理旧文件
+          hexo generate  # 生成静态文件到 public 目录
+
+      # 步骤 6: 部署到 GitHub Pages 分支（如 gh-pages）
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: html
-          FOLDER: public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: html  # 目标分支（需与 GitHub Pages 设置的分支一致）
+          folder: public    # Hexo 生成的静态文件目录
